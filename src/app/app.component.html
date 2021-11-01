@@ -1,0 +1,10 @@
+<label for="search">Search (by author name)</label> &nbsp;
+<input id="search" type="text" [(ngModel)]="searchText" value="">
+
+<div class="wrapper">
+    <ng-container *ngFor="let flickr of flickr_response | filter:searchText">
+        <div class="grid-item">
+            <img class="public-image" [src]="flickr.link[1].ATTR.href">
+        </div>
+    </ng-container>
+</div>
